@@ -1,0 +1,12 @@
+.navbar-custom {
+    background-color: orange;
+}
+
+.navbar-dark .navbar-brand {
+    color: white;
+}
+
+.navbar-dark .navbar-toggler {
+    color: white;
+    border-color: white;
+}

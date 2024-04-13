@@ -1,5 +1,26 @@
 {% extends "layout.html" %}
 {% block content %}
-    <h2>Welcome to Dou dizhu Tutorials!</h2>
-    <p>Learn everything about Dou dizhu, the popular Chinese card game.</p>
+<div class="container mt-4">
+
+    <div class="row">
+        <div class="col-md-8">
+            <img src="{{ url_for('static', filename='img/welcome.jpg') }}" alt="Dou dizhu Background" class="img-fluid">
+        </div>
+        <div class="col-md-4">
+            <div class="bg-light p-3 rounded">
+                <h2>Dou dizhu</h2>
+                <p>Region: China</p>
+                <p>Popularity: ❤️❤️❤️❤️❤️</p>
+                <p>Difficulties: ✅✅✅☑️☑️</p>
+                <a href="{{ url_for('current_progress') }}" class="btn btn-success">Start the tutorial</a>
+                <a href="{{ url_for('quiz') }}" class="btn btn-success">Start the quiz</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="overview mt-4">
+        <h3>Overview</h3>
+        <p>This Chinese climbing game has become very popular in the last 20 years. One player volunteers to play alone as the 'landlord' against the other players in partnership. Playable combinations include the bomb (four of a kind), the rocket (complete set of jokers), and the quadruplex set (four of a kind plus two single cards or pairs).</p>
+    </div>
+</div>
 {% endblock %}

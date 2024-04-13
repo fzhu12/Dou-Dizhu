@@ -10,3 +10,32 @@
     color: white;
     border-color: white;
 }
+
+.left-arrow, .right-arrow {
+    font-size: 32px;
+    color: #007BFF;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.left-arrow:hover, .right-arrow:hover {
+    color: #fff;
+    background-color: #6899cd;
+    border-color: #407dbe;
+}
+
+.nav-arrows-container {
+    position: fixed;
+    bottom: 20px;
+    width: 100%;
+    text-align: center;
+    left: 0;
+    z-index: 1000;
+}
+
+.left-arrow, .right-arrow {
+    margin: 0 15px;
+}

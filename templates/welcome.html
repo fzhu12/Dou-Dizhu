@@ -1,26 +1,75 @@
-{% extends "layout.html" %}
+{% extends 'layout.html' %}
 {% block content %}
-<div class="container mt-4">
-
-    <div class="row">
-        <div class="col-md-8">
-            <img src="{{ url_for('static', filename='img/welcome.jpg') }}" alt="Dou dizhu Background" class="img-fluid">
+<div class="container mt-3 game-container">
+    <div class="row game-maininfo">
+        <div class="col-md-6">
+            <img src="{{ url_for('static', filename='img/welcome.jpg') }}" alt="Dou dizhu Background" class="img-fluid game-image">
         </div>
-        <div class="col-md-4">
-            <div class="bg-light p-3 rounded">
-                <h2>Dou dizhu</h2>
+        <div class="col-md-6">
+            <h1 class="game-name text-center">Dou dizhu</h1>
+            <div class="game-info bg-light p-3">
+                
                 <p>Region: China</p>
                 <p>Popularity: ❤️❤️❤️❤️❤️</p>
                 <p>Difficulties: ✅✅✅☑️☑️</p>
                 <a href="{{ url_for('current_progress') }}" class="btn btn-success">Start the tutorial</a>
+
                 <a href="{{ url_for('quiz') }}" class="btn btn-success">Start the quiz</a>
             </div>
+                
+                
         </div>
     </div>
-
-    <div class="overview mt-4">
-        <h3>Overview</h3>
-        <p>This Chinese climbing game has become very popular in the last 20 years. One player volunteers to play alone as the 'landlord' against the other players in partnership. Playable combinations include the bomb (four of a kind), the rocket (complete set of jokers), and the quadruplex set (four of a kind plus two single cards or pairs).</p>
+    <div class="container mt-3">
+        <div class="d-flex flex-row">
+            <div class="col-md-8">
+                <h3>Welcome to Dou Dizhu Master!</h3>
+                <br>
+                <p>Dou Dizhu Master is your ultimate guide to mastering the thrilling game of Dou Dizhu. Designed specifically for beginners, 
+                    our website provides comprehensive tutorials that cover everything from the foundational rules to advanced strategies. 
+                    Whether you're just starting out or looking to refine your skills, our interactive tutorials make learning both engaging and effective.</p>
+                
+                <h5>About Dou Dizhu</h5>
+                <p>Dou Dizhu, often translated as "Fight the Landlord," is a popular Chinese card game that involves three players, 
+                    with one taking on the role of the 'landlord' against the other two players who are 'peasants'. The game is celebrated for 
+                    its strategic complexity and has various layers of rules regarding card combinations, bidding for the role of the landlord, 
+                    and dynamic gameplay that challenges both the mind and the spirit of cooperation among players.</p>
+                
+                <h5>Interactive Learning on Our Platform</h5>
+                <p>At Dou Dizhu Master, we believe in making learning a fun and interactive experience. Our tutorials are designed to guide 
+                    you through the winning strategies, basic rules, bidding techniques, and card combinations with clear, step-by-step instructions. 
+                    After learning the rules, you can test your knowledge and skills with our engaging quizzes. These quizzes provide a comprehensive 
+                    self-test, ensuring you understand each aspect of the game and are well-prepared to take on any opponent.</p>
+                
+                <p>Embark on your journey to becoming a Dou Dizhu champion today with Dou Dizhu Master – where learning meets fun in the quest for mastery.</p>
+            </div>
+    
+            <div class="vertical-line d-none d-md-block"></div> 
+            <div class="col-md-1">
+                <br>
+            </div>
+            <div class="col-md-3">
+                <h5>Do you know?</h5>
+                <br>
+                <div class="history-items">
+                    <img src="{{ url_for('static', filename='img/history1.jpeg') }}" alt="Early Dou Dizhu" class="img-fluid">
+                    <p>Dou Dizhu originated in Hubei province during the late 1980s.</p>
+                    <br>
+                    <img src="{{ url_for('static', filename='img/history2.png') }}" alt="Dou Dizhu Popularity" class="img-fluid">
+                    <p>The game quickly became popular across China as a competitive and strategic card game.</p>
+                    <br>
+                    <img src="{{ url_for('static', filename='img/history3.png') }}" alt="Modern Dou Dizhu" class="img-fluid">
+                    <p>Today, Dou Dizhu is enjoyed in numerous online platforms and competitions worldwide.</p>
+                    <br>
+                    <img src="{{ url_for('static', filename='img/history4.jpg') }}" alt="Dou Dizhu Championship" class="img-fluid">
+                    <p>Annual championships and tournaments highlight the game's ongoing appeal and competitive nature.</p>
+                </div>
+            </div>
+            
+        </div>
     </div>
 </div>
+
+
 {% endblock %}
+

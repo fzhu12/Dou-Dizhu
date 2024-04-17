@@ -1,9 +1,14 @@
 from flask import Flask, render_template, jsonify, request, redirect, url_for
+import json
 
 app = Flask(__name__)
 
 progress = 1
 score = 0
+
+combo_path = 'static/data/combo.json'
+with open(combo_path, 'r') as combo_data:
+    combo_dic = json.load(combo_data)
 
 @app.route('/')
 def welcome():
@@ -12,7 +17,7 @@ def welcome():
 @app.route('/increment_progress')
 def increment_progress():
     global progress
-    progress = min(progress + 1, 7)
+    progress = min(progress + 1, 8)
     return redirect_to_current_progress()
 
 @app.route('/decrement_progress')
@@ -46,7 +51,16 @@ def rules(rule_id):
 
 @app.route('/combo/<int:combo_id>')
 def combo(combo_id):
-    return render_template('combo.html', combo_id=combo_id)
+    max = 3*combo_id
+    if combo_id == 5:
+        combo = [combo_dic[str(max-2)], combo_dic[str(max-1)]]
+    else:
+        combo = [combo_dic[str(max-2)], combo_dic[str(max-1)], combo_dic[str(max)]]
+    return render_template('combo.html', combo_id=combo_id, combo=combo)
+
+@app.route('/detail/<int:detail_id>')
+def detail(detail_id):
+    return render_template('detail.html', detail_id=detail_id, combo=combo_dic[str(detail_id)])
 
 @app.route('/quiz')
 def quiz():

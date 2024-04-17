@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+{% block content %}
+    <h1>Detail</h1>
+    <h2>This page is for Combo {{ combo.name }}.</h2>
+    <p>{{ combo.description }}.</p>
+    {% set page = (detail_id + 2) // 3 %}
+    {% set link = "/combo/" ~ page %}
+    <a href={{ link }}>
+        <button>Back</button>
+    </a>
+    <div class="nav-arrows-container">
+        <a href="{{ url_for('decrement_progress') }}" class="left-arrow">←</a>
+        <a href="{{ url_for('increment_progress') }}" class="right-arrow">→</a>
+    </div>
+{% endblock %}
+

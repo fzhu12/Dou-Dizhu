@@ -72,11 +72,15 @@ def redirect_to_current_progress():
         return redirect(url_for("combo", combo_id=progress - 3))
 
 
-@app.route("/rules/<int:rule_id>")
+@app.route('/rules/<int:rule_id>')
 def rules(rule_id):
-    rule_titles = {1: "Winning Rules", 2: "Basic Rules", 3: "Bidding Rules"}
+    rule_titles = {
+        1: "Basic Rules",
+        2: "Bidding Rules",
+        3: "Winning Rules"
+    }
     title = rule_titles.get(rule_id, "Unknown Rule")
-    return render_template("rules.html", title=title, rule_id=rule_id)
+    return render_template('rules.html', title=title, rule_id=rule_id)
 
 
 @app.route("/combo/<int:combo_id>")

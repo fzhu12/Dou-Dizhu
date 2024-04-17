@@ -1,7 +1,162 @@
 {% extends "layout.html" %}
 {% block content %}
+
+    <head>
+        <script src="{{ url_for('static', filename='js/rule.js') }}"></script>
+        <link rel="stylesheet" href="{{url_for('static', filename='css/rule.css')}}">
+
+    </head>
+
     <h2>{{ title }}</h2>
     <p>This page is about {{ title }}. (ID: {{ rule_id }})</p>
+
+
+    {% if rule_id == 1 %}
+                    
+        <p>In a card game played with a shuffled pack of 54 cards divided among three players, each receiving 17 cards with 3 leftover cards placed face down on the table, players initially examine their own cards to strategize.</p>
+
+        <button id="startTutorial1" class='btn btn-success'>Start Tutorial</button>
+        <button id="learnAgain1" class='btn btn-success' style="display:none;">Learn Again</button>
+
+
+        <div class="game-images">
+            <div class="player player1">
+                <img src="{{ url_for('static', filename='img/peasant.png') }}" alt="Peasant Player" class="img-fluid game-image" id="player1-peasant">
+                <div class="card-stack" id="player1-cards">
+                    {% for i in range(17) %}
+                    <img src="{{ url_for('static', filename='img/cards/blue_back.png') }}" alt="Blue Card" class="img-fluid card-image">
+                    {% endfor %}
+                </div>
+                <p class='cards_count'>17 cards</p>
+            </div>
+            <div class="player cards1">
+                <div class="card-stack" id="player4-cards">
+                    {% for i in range(3) %}
+                    <img src="{{ url_for('static', filename='img/cards/yellow_back.png') }}" alt="Yellow Card" class="img-fluid card-image3">
+                    {% endfor %}
+                </div>
+                <p class='cards_count'>3 cards</p>
+            </div>
+
+            <div class="player player2">
+                <img src="{{ url_for('static', filename='img/peasant.png') }}" alt="Peasant Player" class="img-fluid game-image">
+                <div class="card-stack" id="player2-cards">
+                    {% for i in range(17) %}
+                    <img src="{{ url_for('static', filename='img/cards/purple_back.png') }}" alt="Purple Card" class="img-fluid card-image">
+                    {% endfor %}
+                </div>
+                <p class='cards_count'>17 cards</p>
+            </div>
+            <div class="player player3" id="landlordPlayer">
+                <img src="{{ url_for('static', filename='img/peasant.png') }}" alt="Landlord Player" class="img-fluid game-image">
+                <div class="card-stack" id="player3-cards">
+                    {% for i in range(17) %}
+                    <img src="{{ url_for('static', filename='img/cards/green_back.png') }}" alt="Green Card" class="img-fluid card-image">
+                    {% endfor %}
+                </div>
+                <p class='cards_count'>17 cards</p>
+            </div>
+        </div>
+
+
+
+    {% elif rule_id == 2 %}
+        <p>Dou dizhu is played among three people with one pack of cards, including the two differentiated jokers. The game starts with players bidding for the "landlord" (地主) position. Players initially examine their own cards to strategize. Then, players announce their willingness to take on risk stakes of 1, 2, or 3, based on their confidence in their hand's strength, with the bidding process being either random online or based on predetermined rules in-person. The player who bids the highest becomes the landlord and incorporates the 3 leftover cards into their hand, competing against the two farmers. </p>
+
+
+        <button id="startTutorial2" class='btn btn-success'>Start Tutorial</button>
+        <button id="learnAgain2" class='btn btn-success' style="display:none;">Learn Again</button>
+
+        <div class="game-images">
+            <div class="player player1">
+                <img src="{{ url_for('static', filename='img/peasant.png') }}" alt="Peasant Player" class="img-fluid game-image">
+                <div class="card-stack" id="player1-cards">
+                    {% for i in range(17) %}
+                    <img src="{{ url_for('static', filename='img/cards/blue_back.png') }}" alt="Blue Card" class="img-fluid card-image">
+                    {% endfor %}
+                </div>
+
+                <p class="caption">I bid</p>
+            </div>
+            <div class="player cards1">
+                <div class="card-stack" id="player4-cards">
+                    {% for i in range(3) %}
+                    <img src="{{ url_for('static', filename='img/cards/yellow_back.png') }}" alt="Yellow Card" class="img-fluid card-image3">
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="player player2">
+                <img src="{{ url_for('static', filename='img/peasant.png') }}" alt="Peasant Player" class="img-fluid game-image">
+                <div class="card-stack" id="player2-cards">
+                    {% for i in range(17) %}
+                    <img src="{{ url_for('static', filename='img/cards/gray_back.png') }}" alt="Gray Card" class="img-fluid card-image">
+                    {% endfor %}
+                </div>
+                <p class="caption">No bid</p>
+            </div>
+            <div class="player player3" id="landlordPlayer">
+                <img src="{{ url_for('static', filename='img/peasant.png') }}" alt="Landlord Player" class="img-fluid game-image">
+                <div class="card-stack" id="player3-cards">
+                    {% for i in range(17) %}
+                    <img src="{{ url_for('static', filename='img/cards/green_back.png') }}" alt="Green Card" class="img-fluid card-image">
+                    {% endfor %}
+                </div>
+                <p class="caption">I bid higher!</p>
+            </div>
+        </div>
+
+
+    {% elif rule_id == 3 %}
+        <p>The objective of the game is to be the first player to have no cards left. The landlord wins by removing all their cards first. The peasants win if one of them removes all their cards first.</p>
+
+
+        <button id="startScenario1" class='btn btn-success' data-scenario="1">Start Scenario 1</button>
+        <button id="startScenario2" class='btn btn-success' data-scenario="2">Start Scenario 2</button>
+
+
+
+        <div class="game-images">
+            <div class="player player1">
+                <img src="{{ url_for('static', filename='img/peasant.png') }}" alt="Peasant Player" class="img-fluid game-image" id="player1-peasant">
+                <div class="card-stack" id="player1-cards">
+                    {% for i in range(17) %}
+                    <img src="{{ url_for('static', filename='img/cards/blue_back.png') }}" alt="Blue Card" class="img-fluid card-image">
+                    {% endfor %}
+                </div>
+                <p class='cards_count'>17 cards</p>
+                <p class="caption"></p>
+            </div>
+
+            <div class="player player2">
+                <img src="{{ url_for('static', filename='img/peasant.png') }}" alt="Peasant Player" class="img-fluid game-image">
+                <div class="card-stack" id="player2-cards">
+                    {% for i in range(17) %}
+                    <img src="{{ url_for('static', filename='img/cards/purple_back.png') }}" alt="Purple Card" class="img-fluid card-image">
+                    {% endfor %}
+                </div>
+                <p class='cards_count'>17 cards</p>
+                <p class="caption"></p>
+            </div>
+            <div class="player player3" id="landlordPlayer">
+                <img src="{{ url_for('static', filename='img/landlord.png') }}" alt="Landlord Player" class="img-fluid game-image">
+                <div class="card-stack" id="player3-cards">
+                    {% for i in range(17) %}
+                    <img src="{{ url_for('static', filename='img/cards/green_back.png') }}" alt="Green Card" class="img-fluid card-image">
+                    {% endfor %}
+                </div>
+                <p class='cards_count'>17 cards</p>
+                <p class="caption"></p>
+            </div>
+        </div>
+
+
+
+
+
+    {% else %}
+        <p>This rule does not exist.</p>
+    {% endif %}
+
     <div class="nav-arrows-container">
         <a href="{{ url_for('decrement_progress') }}" class="left-arrow">←</a>
         <a href="{{ url_for('increment_progress') }}" class="right-arrow">→</a>

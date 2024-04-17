@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card mt-5">
+                <div class="card-body">
+                    <h1 class="card-title">Quiz Result</h1>
+                    <hr>
+                    <div class="alert alert-success" role="alert">
+                        <h4 class="alert-heading">{{ data['message'] }}</h4>
+                        <p>Your score: <strong>{{ data['score'] }}</strong></p>
+                        <hr>
+                        <p class="mb-0">Thank you for participating!</p>
+                    </div>
+                    <a class="btn btn-primary mt-3" href="/">Return to Home Page</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

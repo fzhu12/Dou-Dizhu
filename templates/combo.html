@@ -1,35 +1,53 @@
 {% extends "layout.html" %}
 {% block content %}
+
+    <head>
+        <script src="{{ url_for('static', filename='js/combo.js') }}"></script>
+        <link rel="stylesheet" href="{{url_for('static', filename='css/combo.css')}}">
+    </head>
+
     <h1>Combo Details</h1>
     <p>This page is for Combo Page {{ combo_id }}.</p>
     {% if combo_id == 5 %}
         <p>This is the last page for this section.</p>
     {% endif %}
+
+{#    <p>#}
+{#      <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">#}
+{#        Link with href#}
+{#      </a>#}
+{#    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">#}
+{#        Button with data-target#}
+{#    </button>#}
+{#    </p>#}
+{#    <div class="collapse" id="collapseExample">#}
+{#      <div class="card card-body">#}
+{#        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.#}
+{#      </div>#}
+{#    </div>#}
+
+
     <div class="row">
-        <h2 class="col-4">{{ combo[0].name }}</h2>
-        <h2 class="col-4">{{ combo[1].name }}</h2>
-        {% if combo|length == 3 %}
-            <h2 class="col-4">{{ combo[2].name }}</h2>
-        {% endif %}
-    </div>
-    <div class="row">
-        <div class="col-4">
+        <div class="col-4 border">
             {% set link = "/detail/" ~ combo[0].id %}
             <a href={{ link }}>
-                <img class="img-fluid" src={{ combo[0].image }} alt={{ combo[0].name }}">
+                <h2>{{ combo[0].name }}</h2>
+                <img class="img-fluid size" src={{ combo[0].image }} alt={{ combo[0].name }}">
             </a>
         </div>
-        <div class="col-4">
+        <div class="col-4 border">
             {% set link = "/detail/" ~ combo[1].id %}
             <a href={{ link }}>
-                <img class="img-fluid" src={{ combo[1].image }} alt={{ combo[1].name }}">
+                <h2>{{ combo[1].name }}</h2>
+                <img class="img-fluid size" src={{ combo[1].image }} alt={{ combo[1].name }}">
             </a>
         </div>
         {% if combo|length == 3 %}
-            <div class="col-4">
+            <div class="col-4 border">
                 {% set link = "/detail/" ~ combo[2].id %}
                 <a href={{ link }}>
-                    <img class="img-fluid" src={{ combo[2].image }} alt={{ combo[2].name }}">
+                    <h2>{{ combo[2].name }}</h2>
+                     <img class="img-fluid size" src={{ combo[2].image }} alt={{ combo[2].name }}">
                 </a>
             </div>
         {% endif %}

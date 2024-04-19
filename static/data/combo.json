@@ -1,0 +1,86 @@
+{
+    "1": {
+        "id": "1",
+        "name": "Single Card",
+        "image": "../static/img/combos/single.jpg",
+        "description": "This is a combination consisting of one single card. To beat a previous play of this combination a player must play another single card of a higher denomination."
+    },
+    "2": {
+        "id": "2",
+        "name": "Pair",
+        "image": "../static/img/combos/pair.jpg",
+        "description": "This is a combination consisting of two cards of the exact same denomination. A pair can be beaten by a pair of cards of a higher denomination."
+    },
+    "3": {
+        "id": "3",
+        "name": "Triplet",
+        "image": "../static/img/combos/tri.jpg",
+        "description": "A Triplet is three cards of the exact same denomination. A specific Triplet can be beat by another Triplet of a higher denomination."
+    },
+    "4": {
+        "id": "4",
+        "name": "Triplet with Kicker",
+        "image": "../static/img/combos/tri_single.jpg",
+        "description": "This is a combination consisting of three cards of the same denomination and a fourth card of any other rank. A Triplet with Kicker can be beat by another Triplet with Kicker combination in which the rank of the Triplet cards is of a higher denomination."
+    },
+    "5": {
+        "id": "5",
+        "name": "Triplet with Pair",
+        "image": "../static/img/combos/tri_pair.jpg",
+        "description": "This combination consists of five cards, three cards of the same denomination and two other matching cards. A Triplet with Pair can be beat by another Triplet with Pair in which the Triplet consists of higher ranked cards than the first Triplet."
+    },
+    "6": {
+        "id": "6",
+        "name": "Sequence",
+        "image": "../static/img/combos/seq.jpg",
+        "description": "A Sequence is five or more cards in direct numerical sequence. The lowest allowable card in any sequence is a 3 and the highest is an Ace (Jokers and Twos are not permitted as part of a Sequence). A sequence meld can be beat by another sequence meld consisting of the same number of cards but in which the highest card in the sequence is of a higher denomination than that of the previous sequence."
+    },
+    "7": {
+        "id": "7",
+        "name": "Pair Sequence",
+        "image": "../static/img/combos/seq_pair.jpg",
+        "description": "A Sequence Pair consists of a minimum of at least three pairs of cards, with the denomination of each pair in direct sequence. A Sequence pair can be beaten by a similar sequence pair consisting of the same number of cards but in which the highest pair in the sequence is higher than that of the previous sequence."
+    },
+    "8": {
+        "id": "8",
+        "name": "Triplet Sequence",
+        "image": "../static/img/combos/seq_tri.jpg",
+        "description": "A Sequence Triplet consists of a minimum of at least two Triplets in which the cards of the two sets of triplets are in direct sequential order. A Sequence Triplet can be beaten by another Sequence Triplet consisting of the same number of cards but in which the highest ranked Triplet in the sequence is higher than that from the previous Sequence Triplet."
+    },
+    "9": {
+        "id": "9",
+        "name": "Triplet Sequence with Kickers",
+        "image": "../static/img/combos/seq_tri_kickers.jpg",
+        "description": "A Triple Sequence with Kickers consists of a Triplet Sequence (as described above) with the addition of a number of odd, unmatched cards equal to the number of Triplets contained in the combination. These additional cards may not be of the same denomination as any other card in the Triplets Sequence with Kickers combination. A meld of this type can be beat by another Triplets Sequence with Kickers in which the highest Triplet in the sequence is higher than that of the previous such Triplets Sequence with Kickers."
+    },
+    "10": {
+        "id": "10",
+        "name": "Triplet Sequence with Pairs",
+        "image": "../static/img/combos/seq_tri_pair.jpg",
+        "description": "The Triple Sequence with Pairs consists of a Triplet Sequence (as described above) with one additional Pair of cards added for each Triplet included in that Triplet Sequence. A combination of this type can be beat by another Triplet Sequence with Pairs in which the highest Triplet included in the sequence is higher than the previous such combination."
+    },
+    "11": {
+        "id": "11",
+        "name": "Quad Set with Kickers",
+        "image": "../static/img/combos/quad_kickers.jpg",
+        "description": "A Quad Set with Kickers is a combination consisting of four cards of the exact same denomination and two additional cards included. Each of the two kicker cards must be distinct from any other card comprising that same combination. A Quad Set with Kickers can be beat by another similar meld in which the four equally ranked cards are of a higher rank than that of the previous Quad Set with Kickers."
+    },
+    "12": {
+        "id": "12",
+        "name": "Quad Set with Pairs",
+        "image": "../static/img/combos/quad_pair.jpg",
+        "description": "A Quad Set with Pairs is a combination consisting of four cards of the exact same denomination and two additional pairs. A Quad Set with Pairs can be beaten by another Quad Set with Pairs in which the four equally ranked cards are of a higher denomination than that of the previous Quad Set with Pairs combination on this round."
+    },
+    "13": {
+        "id": "13",
+        "name": "Bomb",
+        "image": "../static/img/combos/bomb.jpg",
+        "description": "Four cards of the exact same denomination. This combination can beat any other combination in the game except a Rocket (see below) or another Bomb of higher ranking. When comparing two Bombs to determine which one is higher ranking, the one which is comprised of higher ranking cards is considered to be the higher."
+    },
+    "14": {
+        "id": "14",
+        "name": "Rocket",
+        "image": "../static/img/combos/rocket.jpg",
+        "description": "A Rocket consists of the two Jokers. This combination is the highest ranking combination in the game and can be played, on a players turn, to beat any other previous combination."
+    }
+}

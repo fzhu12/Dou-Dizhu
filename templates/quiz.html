@@ -1,5 +1,74 @@
 {% extends "layout.html" %}
 {% block content %}
-    <h2>Quiz Yourself!</h2>
-    <p>Test your knowledge of Dou dizhu with a fun quiz!</p>
+
+<head>
+    <script>
+        var data = {{ data| tojson }}
+    </script>
+    <script src="{{ url_for('static', filename='js/quiz.js') }}"></script>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/quiz.css')}}">
+
+</head>
+
+<h2>Quiz Yourself!</h2>
+<p>Test your knowledge of Dou dizhu with a fun quiz!</p>
+
+<body>
+    <div id="quizBody">
+
+    </div>
+    <div id="quizResponse">
+
+    </div>
+</body>
+
+
+<div class="nav-arrows-container">
+    <button id="prv" class="left-arrow">←</button>
+    <button id="nxt" class="right-arrow">→</button>
+</div>
+
+
+<div class="modal fade" id="errorModal" tabindex="-1" role="dialog" aria-labelledby="errorModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="errorModalLabel">Warning</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p id="errorMessage"></p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="submitConfirmationModal" tabindex="-1" aria-labelledby="submitConfirmationModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="submitConfirmationModalLabel">Confirm Submission</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Are you sure you want to submit your answers?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Review Answers</button>
+                <button type="button" class="btn btn-primary" id="confirmSubmit">Submit Answers</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 {% endblock %}

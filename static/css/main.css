@@ -1,6 +1,11 @@
+body {
+    color: #592b1c;         /* Sets the text color */
+    background-color: #f0c389;  /* Sets the background color */
+}
+
 /* CSS style for navbar*/
 .navbar-custom {
-    background-color: orange;
+    background-color: #a33907;
 }
 
 .navbar-dark .navbar-brand {

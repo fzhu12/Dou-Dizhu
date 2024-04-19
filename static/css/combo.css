@@ -1,0 +1,21 @@
+.size{
+    height: 200px;
+    width: auto;
+}
+
+.border{
+    text-align: center;
+    padding: 45px 30px;
+    /*margin: 10px;*/
+    border: 5px solid #592b1c !important;
+    border-radius: 100px !important;
+    background-color: #fde6d2;
+}
+
+.header{
+    color: #592b1c !important;
+}
+
+.btn-primary:hover {
+    background-color: green;
+}

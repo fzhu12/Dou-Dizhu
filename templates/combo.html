@@ -12,25 +12,22 @@
         <p>This is the last page for this section.</p>
     {% endif %}
 
-<p>
-    <a class="btn btn-primary" data-toggle="collapse" href="#des1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">Toggle first element</a>
-    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#des2" aria-expanded="false" aria-controls="multiCollapseExample2">Toggle second element</button>
-    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#des3" aria-expanded="false" aria-controls="multiCollapseExample2">Toggle third element</button>
-</p>
 
     <div class="row">
 
         <div class="col-4 border">
-            {% set link = "/detail/" ~ combo[0].id %}
-            <a href={{ link }}>
+{#            {% set link = "/detail/" ~ combo[0].id %}#}
+{#            <a href={{ link }}>#}
+            <a class="btn btn-primary" data-toggle="collapse" href="#des1" role="button" aria-expanded="false">
                 <h2>{{ combo[0].name }}</h2>
                 <img class="img-fluid size" src={{ combo[0].image }} alt={{ combo[0].name }}">
             </a>
         </div>
 
         <div class="col-4 border">
-            {% set link = "/detail/" ~ combo[1].id %}
-            <a href={{ link }}>
+{#            {% set link = "/detail/" ~ combo[1].id %}#}
+{#            <a href={{ link }}>#}
+            <a class="btn btn-primary" data-toggle="collapse" href="#des2" role="button" aria-expanded="false">
                 <h2>{{ combo[1].name }}</h2>
                 <img class="img-fluid size" src={{ combo[1].image }} alt={{ combo[1].name }}">
             </a>
@@ -38,8 +35,9 @@
 
         {% if combo|length == 3 %}
             <div class="col-4 border">
-                {% set link = "/detail/" ~ combo[2].id %}
-                <a href={{ link }}>
+{#                {% set link = "/detail/" ~ combo[2].id %}#}
+{#                <a href={{ link }}>#}
+                <a class="btn btn-primary" data-toggle="collapse" href="#des3" role="button" aria-expanded="false">
                     <h2>{{ combo[2].name }}</h2>
                      <img class="img-fluid size" src={{ combo[2].image }} alt={{ combo[2].name }}">
                 </a>

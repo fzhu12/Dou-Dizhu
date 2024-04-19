@@ -12,22 +12,14 @@
         <p>This is the last page for this section.</p>
     {% endif %}
 
-{#    <p>#}
-{#      <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">#}
-{#        Link with href#}
-{#      </a>#}
-{#    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">#}
-{#        Button with data-target#}
-{#    </button>#}
-{#    </p>#}
-{#    <div class="collapse" id="collapseExample">#}
-{#      <div class="card card-body">#}
-{#        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.#}
-{#      </div>#}
-{#    </div>#}
-
+<p>
+    <a class="btn btn-primary" data-toggle="collapse" href="#des1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">Toggle first element</a>
+    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#des2" aria-expanded="false" aria-controls="multiCollapseExample2">Toggle second element</button>
+    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#des3" aria-expanded="false" aria-controls="multiCollapseExample2">Toggle third element</button>
+</p>
 
     <div class="row">
+
         <div class="col-4 border">
             {% set link = "/detail/" ~ combo[0].id %}
             <a href={{ link }}>
@@ -35,6 +27,7 @@
                 <img class="img-fluid size" src={{ combo[0].image }} alt={{ combo[0].name }}">
             </a>
         </div>
+
         <div class="col-4 border">
             {% set link = "/detail/" ~ combo[1].id %}
             <a href={{ link }}>
@@ -42,6 +35,7 @@
                 <img class="img-fluid size" src={{ combo[1].image }} alt={{ combo[1].name }}">
             </a>
         </div>
+
         {% if combo|length == 3 %}
             <div class="col-4 border">
                 {% set link = "/detail/" ~ combo[2].id %}
@@ -51,7 +45,37 @@
                 </a>
             </div>
         {% endif %}
+
     </div>
+
+    <div class="row">
+        <div class="col-4">
+            <div class="collapse multi-collapse" id="des1">
+                <div class="card card-body">
+                    {{ combo[0].description }}
+                </div>
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="collapse multi-collapse" id="des2">
+                <div class="card card-body">
+                    {{ combo[1].description }}
+                </div>
+            </div>
+        </div>
+
+        {% if combo|length == 3 %}
+            <div class="col-4">
+                <div class="collapse multi-collapse" id="des3">
+                    <div class="card card-body">
+                        {{ combo[2].description }}
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+    </div>
+
+
     <div class="nav-arrows-container">
         <a href="{{ url_for('decrement_progress') }}" class="left-arrow">←</a>
         <a href="{{ url_for('increment_progress') }}" class="right-arrow">→</a>

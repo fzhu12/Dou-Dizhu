@@ -15,47 +15,42 @@
 
     <div class="row">
 
-        <div class="col-4 border">
+        <a class="col-4 btn btn-primary border" data-toggle="collapse" href="#des1" role="button" aria-expanded="false">
 {#            {% set link = "/detail/" ~ combo[0].id %}#}
 {#            <a href={{ link }}>#}
-            <a class="btn btn-primary" data-toggle="collapse" href="#des1" role="button" aria-expanded="false">
-                <h2>{{ combo[0].name }}</h2>
-                <img class="img-fluid size" src={{ combo[0].image }} alt={{ combo[0].name }}">
-            </a>
-        </div>
+            <h2 class="header">{{ combo[0].name }}</h2>
+            <img class="img-fluid size" src={{ combo[0].image }} alt={{ combo[0].name }}">
+        </a>
 
-        <div class="col-4 border">
+
+        <a class="col-4 btn btn-primary border" data-toggle="collapse" href="#des2" role="button" aria-expanded="false">
 {#            {% set link = "/detail/" ~ combo[1].id %}#}
 {#            <a href={{ link }}>#}
-            <a class="btn btn-primary" data-toggle="collapse" href="#des2" role="button" aria-expanded="false">
-                <h2>{{ combo[1].name }}</h2>
-                <img class="img-fluid size" src={{ combo[1].image }} alt={{ combo[1].name }}">
-            </a>
-        </div>
+            <h2 class="header">{{ combo[1].name }}</h2>
+            <img class="img-fluid size" src={{ combo[1].image }} alt={{ combo[1].name }}">
+        </a>
 
         {% if combo|length == 3 %}
-            <div class="col-4 border">
+            <a class="col-4 btn btn-primary border" data-toggle="collapse" href="#des3" role="button" aria-expanded="false">
 {#                {% set link = "/detail/" ~ combo[2].id %}#}
 {#                <a href={{ link }}>#}
-                <a class="btn btn-primary" data-toggle="collapse" href="#des3" role="button" aria-expanded="false">
-                    <h2>{{ combo[2].name }}</h2>
-                     <img class="img-fluid size" src={{ combo[2].image }} alt={{ combo[2].name }}">
-                </a>
-            </div>
+                <h2 class="header">{{ combo[2].name }}</h2>
+                <img class="img-fluid size" src={{ combo[2].image }} alt={{ combo[2].name }}">
+            </a>
         {% endif %}
 
     </div>
 
     <div class="row">
         <div class="col-4">
-            <div class="collapse multi-collapse" id="des1">
+            <div class="collapse" id="des1">
                 <div class="card card-body">
                     {{ combo[0].description }}
                 </div>
             </div>
         </div>
         <div class="col-4">
-            <div class="collapse multi-collapse" id="des2">
+            <div class="collapse" id="des2">
                 <div class="card card-body">
                     {{ combo[1].description }}
                 </div>
@@ -64,7 +59,7 @@
 
         {% if combo|length == 3 %}
             <div class="col-4">
-                <div class="collapse multi-collapse" id="des3">
+                <div class="collapse" id="des3">
                     <div class="card card-body">
                         {{ combo[2].description }}
                     </div>

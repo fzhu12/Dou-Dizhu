@@ -49,7 +49,7 @@ def welcome():
 @app.route("/increment_progress")
 def increment_progress():
     global progress
-    progress = min(progress + 1, 8)
+    progress = min(progress + 1, 10)
     return redirect_to_current_progress()
 
 
@@ -68,8 +68,12 @@ def current_progress():
 def redirect_to_current_progress():
     if progress <= 3:
         return redirect(url_for("rules", rule_id=progress))
+    if progress == 4:
+        return redirect(url_for("rank"))
+    if progress == 10:
+        return redirect(url_for("finish"))
     else:
-        return redirect(url_for("combo", combo_id=progress - 3))
+        return redirect(url_for("combo", combo_id=progress - 4))
 
 
 @app.route('/rules/<int:rule_id>')
@@ -93,11 +97,14 @@ def combo(combo_id):
     return render_template("combo.html", combo_id=combo_id, combo=combo)
 
 
-@app.route("/detail/<int:detail_id>")
-def detail(detail_id):
-    return render_template(
-        "detail.html", detail_id=detail_id, combo=combo_dic[str(detail_id)]
-    )
+@app.route("/rank")
+def rank():
+    return render_template("rank.html", rank=combo_dic["rank"])
+
+
+@app.route("/finish")
+def finish():
+    return render_template("finish.html", rank=combo_dic["rank"])
 
 
 # @app.route("/quiz")

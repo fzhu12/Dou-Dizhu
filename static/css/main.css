@@ -1,6 +1,13 @@
+@font-face {
+    font-family: 'Crete Round';
+    src: url('/fonts/CreteRound-Regular.ttf') format('truetype'); /* Adjust the path as necessary */
+    font-weight: normal;
+    font-style: normal;
+}
 body {
     color: #592b1c;         /* Sets the text color */
     background-color: #f0c389;  /* Sets the background color */
+    font-family: 'Crete Round', serif;
 }
 
 /* CSS style for navbar*/
@@ -105,4 +112,66 @@ body {
     font-size: 14px;
     text-align: center; 
     margin-bottom: 20px; 
+}
+
+.show_progress{
+    margin: 5%;
+}
+
+.progress_bar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.progress_tracker {
+    display: flex;
+    align-items: center;
+}
+
+.step {
+    margin: 0 20px;
+    width: 30px;
+    height: 30px;
+    border: 2px solid dimgray;
+    border-radius: 50%;
+    background-color: #ccc;
+    position: relative;
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center;
+    color: dimgray;
+    font-family: Arial, sans-serif;
+}
+
+.progress_text {
+    margin: 0 18px; 
+    font-size: 0.8em;
+    color: gray; 
+    text-align: center;
+}
+
+.step.completed {
+    border-color: green;
+    background-color: green;
+    color: white;
+}
+
+.step:not(:last-child)::after {
+    content: '';
+    width: 60px;
+    height: 2px;
+    background-color: dimgray;
+    position: absolute;
+    left: 50%;
+    z-index: -1;
+}
+
+.step.completed:not(:last-child)::after {
+    background-color: green;
+}
+
+.icon {
+    font-size: 1em;
 }

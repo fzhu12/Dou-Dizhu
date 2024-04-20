@@ -10,6 +10,31 @@
     <h2>{{ title }}</h2>
     <p>This page is about {{ title }}. (ID: {{ rule_id }})</p>
 
+    <div class="show_progress">
+        <div class="progress_bar">
+            <div class="progress_tracker">
+                {% for step in range(1, 10) %}
+                    {% if step <= rule_id %}
+                        <div class="step completed">
+                            <span class="icon">✔</span>
+                        </div>
+                    {% else %}
+                        <div class="step">
+                            <span class="icon"></span>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+        <div class="progress_bar">
+            <div class="progress_tracker">
+                {% for step in range(1, 10) %}
+                    <div class="progress_text">Step {{ step }}</div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
 
     {% if rule_id == 1 %}
                     

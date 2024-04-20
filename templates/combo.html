@@ -2,38 +2,59 @@
 {% block content %}
 
     <head>
-        <script src="{{ url_for('static', filename='js/combo.js') }}"></script>
         <link rel="stylesheet" href="{{url_for('static', filename='css/combo.css')}}">
     </head>
 
     <h1>Combo Details</h1>
-    <p>This page is for Combo Page {{ combo_id }}.</p>
+    <p>
+        This page is for Combo Page {{ combo_id }}.
     {% if combo_id == 5 %}
-        <p>This is the last page for this section.</p>
+        This is the last page for this section.
     {% endif %}
+    </p>
 
+    <div class="show_progress">
+        <div class="progress_bar">
+            <div class="progress_tracker">
+                {% for step in range(1, 10) %}
+                    {% if step <= (combo_id + 3) %}
+                        <div class="step completed">
+                            <span class="icon">✔</span>
+                        </div>
+                    {% elif step == (combo_id + 4) %}
+                        <div class="step now">
+                            <span class="icon">I</span>
+                        </div>
+                    {% else %}
+                        <div class="step">
+                            <span class="icon"></span>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+        <div class="progress_bar">
+            <div class="progress_tracker">
+                {% for step in range(1, 10) %}
+                    <div class="progress_text">Step {{ step }}</div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
 
     <div class="row">
-
         <a class="col-4 btn btn-primary border" data-toggle="collapse" href="#des1" role="button" aria-expanded="false">
-{#            {% set link = "/detail/" ~ combo[0].id %}#}
-{#            <a href={{ link }}>#}
             <h2 class="header">{{ combo[0].name }}</h2>
             <img class="img-fluid size" src={{ combo[0].image }} alt={{ combo[0].name }}">
         </a>
 
-
         <a class="col-4 btn btn-primary border" data-toggle="collapse" href="#des2" role="button" aria-expanded="false">
-{#            {% set link = "/detail/" ~ combo[1].id %}#}
-{#            <a href={{ link }}>#}
             <h2 class="header">{{ combo[1].name }}</h2>
             <img class="img-fluid size" src={{ combo[1].image }} alt={{ combo[1].name }}">
         </a>
 
         {% if combo|length == 3 %}
             <a class="col-4 btn btn-primary border" data-toggle="collapse" href="#des3" role="button" aria-expanded="false">
-{#                {% set link = "/detail/" ~ combo[2].id %}#}
-{#                <a href={{ link }}>#}
                 <h2 class="header">{{ combo[2].name }}</h2>
                 <img class="img-fluid size" src={{ combo[2].image }} alt={{ combo[2].name }}">
             </a>
@@ -67,7 +88,6 @@
             </div>
         {% endif %}
     </div>
-
 
     <div class="nav-arrows-container">
         <a href="{{ url_for('decrement_progress') }}" class="left-arrow">←</a>

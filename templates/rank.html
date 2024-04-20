@@ -1,0 +1,50 @@
+{% extends "layout.html" %}
+{% block content %}
+    <h1>Card Rank</h1>
+    <p>This page is for Rank.</p>
+
+        <div class="show_progress">
+        <div class="progress_bar">
+            <div class="progress_tracker">
+                {% for step in range(1, 10) %}
+                    {% if step <= 3 %}
+                        <div class="step completed">
+                            <span class="icon">✔</span>
+                        </div>
+                    {% elif step == 4 %}
+                        <div class="step now">
+                            <span class="icon">I</span>
+                        </div>
+                    {% else %}
+                        <div class="step">
+                            <span class="icon"></span>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+        <div class="progress_bar">
+            <div class="progress_tracker">
+                {% for step in range(1, 10) %}
+                    <div class="progress_text">Step {{ step }}</div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-2"></div>
+        <div class="col-6">
+            <p>{{ rank }}</p>
+        </div>
+        <div class="col-4">
+            <img class="img-fluid" src="../static/img/order.jpg" alt="rank">
+        </div>
+    </div>
+
+    <div class="nav-arrows-container">
+        <a href="{{ url_for('decrement_progress') }}" class="left-arrow">←</a>
+        <a href="{{ url_for('increment_progress') }}" class="right-arrow">→</a>
+    </div>
+{% endblock %}
+

@@ -4,10 +4,12 @@
     font-weight: normal;
     font-style: normal;
 }
+
 body {
     color: #592b1c;         /* Sets the text color */
     background-color: #f0c389;  /* Sets the background color */
     font-family: 'Crete Round', serif;
+    margin-bottom: 50px;
 }
 
 /* CSS style for navbar*/
@@ -155,6 +157,12 @@ body {
 .step.completed {
     border-color: green;
     background-color: green;
+    color: white;
+}
+
+.step.now {
+    border-color: orange;
+    background-color: orange;
     color: white;
 }
 

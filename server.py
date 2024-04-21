@@ -43,8 +43,11 @@ quiz_4 = {
 
 @app.route("/")
 def welcome():
-    return render_template("welcome.html")
+    return render_template("welcome.html", progress=progress)
 
+@app.route("/about")
+def about():
+    return render_template("about.html")
 
 @app.route("/increment_progress")
 def increment_progress():
@@ -100,6 +103,7 @@ def combo(combo_id):
 @app.route("/rank")
 def rank():
     return render_template("rank.html", rank=combo_dic["rank"])
+
 
 
 @app.route("/finish")

@@ -12,7 +12,7 @@ combo_path = "static/data/combo.json"
 with open(combo_path, "r") as combo_data:
     combo_dic = json.load(combo_data)
 
-# 1:single with pic opts, 2: single without pic, 3: rank, 4: multiple
+# 1: single with pic opts, 2: single without pic, 3: rank, 4: multiple
 quiz_1 = {
     "type": 3,
     "title": "Rank the following cards according to game's card hierarchy",
@@ -45,9 +45,11 @@ quiz_4 = {
 def welcome():
     return render_template("welcome.html", progress=progress)
 
+
 @app.route("/about")
 def about():
     return render_template("about.html")
+
 
 @app.route("/increment_progress")
 def increment_progress():
@@ -79,15 +81,11 @@ def redirect_to_current_progress():
         return redirect(url_for("combo", combo_id=progress - 4))
 
 
-@app.route('/rules/<int:rule_id>')
+@app.route("/rules/<int:rule_id>")
 def rules(rule_id):
-    rule_titles = {
-        1: "Basic Rules",
-        2: "Bidding Rules",
-        3: "Winning Rules"
-    }
+    rule_titles = {1: "Basic Rules", 2: "Bidding Rules", 3: "Winning Rules"}
     title = rule_titles.get(rule_id, "Unknown Rule")
-    return render_template('rules.html', title=title, rule_id=rule_id)
+    return render_template("rules.html", title=title, rule_id=rule_id)
 
 
 @app.route("/combo/<int:combo_id>")
@@ -105,7 +103,6 @@ def rank():
     return render_template("rank.html", rank=combo_dic["rank"])
 
 
-
 @app.route("/finish")
 def finish():
     return render_template("finish.html", rank=combo_dic["rank"])
@@ -119,32 +116,49 @@ def finish():
 @app.route("/quiz", methods=["GET", "POST"])
 def quiz():
     mp_qz = [quiz_1, quiz_2, quiz_3, quiz_4]
+
     if request.method == "POST":
-        response = request.json
-        # cal score
+        response = request.json 
         total = len(mp_qz)
-        print(response)
-        correct = sum(
-            [
-                1
-                for i in range(len(mp_qz))
-                if mp_qz[i]["correct"] == response["answers"][i]
-            ]
-        )
-        print(
-            "Received submission data:",
-            response,
-            correct,
-        )
-        result_data = {
-            "score": round((correct / total) * 100),
-            "message": "Congratulations! ",
-        }
-        return render_template("quiz_result.html", data=result_data)
+        correct_num = 0
+        data_for_template = []
 
-    data = {"quiz": mp_qz}
+        for i, quiz in enumerate(mp_qz):
+            user_answer = response["answers"][i]
+            correct_answer = quiz["correct"]
+            is_correct = (
+                (user_answer == correct_answer)
+                if quiz["type"] == 3
+                else (sorted(user_answer) == sorted(correct_answer))
+            )
+            correct_num += is_correct
+            data_for_template.append(
+                {
+                    "question": quiz,
+                    "user_answer": user_answer,
+                    "correct_answer": correct_answer,
+                    "is_correct": is_correct,
+                }
+            )
 
-    return render_template("quiz.html", data=data)
+        score = round((correct_num / total) * 100)
+        if score >= 90:
+            message = "Outstanding performance! Congratulations!"
+        elif score >= 75:
+            message = "Great job! You really know your stuff."
+        elif score >= 50:
+            message = "Good effort! With a little more practice, you can master it."
+        elif score >= 25:
+            message = "Fair attempt. Keep studying and try again!"
+        else:
+            message = "It seems like you struggled. Review the material and try again!"
+
+        return render_template(
+            "quiz_result.html", score=score, message=message, data=data_for_template
+        )
+
+    else:
+        return render_template("quiz.html", data={"quiz": mp_qz})
 
 
 @app.route("/end")

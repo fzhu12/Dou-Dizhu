@@ -3,6 +3,33 @@ var quizList = data['quiz'];
 var answerList = new Array(quizList.length);
 
 
+
+function updateProgressTracker() {
+    const totalSteps = quizList.length;
+    const progressTrackerIcons = document.getElementById('progressTrackerIcons');
+    const progressTrackerTexts = document.getElementById('progressTrackerTexts');
+    progressTrackerIcons.innerHTML = '';
+    progressTrackerTexts.innerHTML = '';
+
+    for (let step = 1; step <= totalSteps; step++) {
+        const iconElement = document.createElement('div');
+        iconElement.classList.add('step');
+        if (step < curIndex + 1) {
+            iconElement.classList.add('completed');
+            iconElement.innerHTML = `<span class="icon">✔</span>`;
+        } else if (step === curIndex + 1) {
+            iconElement.classList.add('now');
+            iconElement.innerHTML = `<span class="icon">I</span>`;
+        } else {
+            iconElement.innerHTML = `<span class="icon"></span>`;
+        }
+        progressTrackerIcons.appendChild(iconElement);
+        const textElement = document.createElement('div');
+        textElement.classList.add('progress_text');
+        textElement.textContent = `Step ${step}`;
+        progressTrackerTexts.appendChild(textElement);
+    }
+}
 function goNext() {
     var result = validateNxtIdx(curIndex, curIndex + 1);
     curIndex = result.index;
@@ -51,7 +78,7 @@ function showResponse(idx, answerList, quiz_content) {
     console.log(answerOrd, "answer")
     $('#quizResponse').empty();
 
-    if (answerList[idx] !== undefined && quizType === 1) {
+    if (answerList[idx] !== undefined && (quizType === 1 || quizType == 2)) {
         var alertType = "alert-success";
         $("#quizResponse").append(`
             <div class="alert ${alertType}" role="alert">
@@ -66,15 +93,19 @@ function showResponse(idx, answerList, quiz_content) {
         responseHtml += `</ul></div>`;
         $("#quizResponse").append(responseHtml);
     } else if (answerList[idx] !== undefined && quizType == 4) {
-        var responseHtml = `<div class="alert alert-success" role="alert">
-        Your choose:
+        console.log(answerOrd,"answerOrd")
+        if (answerOrd.length > 0) {
+            var responseHtml = `<div class="alert alert-success" role="alert">
+            Your choose:
+    
+            <ul>`;
+            answerOrd.forEach(function (itemIndex, index) {
+                responseHtml += `<li><strong>${options[itemIndex]}</strong></li>`;
+            });
+            responseHtml += `</ul></div>`;
+            $("#quizResponse").append(responseHtml);
+        }
 
-        <ul>`;
-        answerOrd.forEach(function (itemIndex, index) {
-            responseHtml += `<li><strong>${options[itemIndex]}</strong></li>`;
-        });
-        responseHtml += `</ul></div>`;
-        $("#quizResponse").append(responseHtml);
     }
 }
 
@@ -171,8 +202,10 @@ function initOptions() {
 $(document).ready(function () {
     showQuiz(quizList[curIndex]);
     initOptions();
+    updateProgressTracker(); // Initial setup
     $('#nxt').on("click", function () {
         var msg = goNext();
+        updateProgressTracker();
         console.log(msg)
         if (msg == "submit") {
             $('#submitConfirmationModal').modal('show');
@@ -205,6 +238,7 @@ $(document).ready(function () {
     });
     $('#prv').on("click", function () {
         var msg = goPrev();
+        updateProgressTracker();
         showQuiz(quizList[curIndex]);
         initOptions();
         showResponse(curIndex, answerList, quizList[curIndex])

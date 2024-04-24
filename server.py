@@ -25,6 +25,12 @@ quiz_2 = {
     "options": ["9C", "2C", "Abomb"],
     "correct": ["2"],
 }
+quiz_6 = {
+    "type": 3,
+    "title": "Rank the following are biggest Triplet with an attached pair",
+    "options": ["AA222", "AAA33", "AAA22"],
+    "correct": ["0", "2", "1"],
+}
 quiz_3 = {
     "type": 2,
     "title": "What’s the best option I deal in this turn?",
@@ -34,11 +40,20 @@ quiz_3 = {
 }
 
 quiz_4 = {
+    "type": 2,
+    "title": "What’s the best option I deal in this turn?",
+    "options": ["10,10,10,2", "10,10,10,9", "Joker", "K,K,2,2"],
+    "q_img": "qt_2",
+    "correct": ["1"],
+}
+
+quiz_5 = {
     "type": 4,
     "title": "Which of the following are boombs",
     "options": ["9C", "2C", "Abomb", "Abomb"],
     "correct": ["2", "3"],
 }
+mp_qz = [quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6]
 
 
 @app.route("/")
@@ -115,10 +130,9 @@ def finish():
 
 @app.route("/quiz", methods=["GET", "POST"])
 def quiz():
-    mp_qz = [quiz_1, quiz_2, quiz_3, quiz_4]
 
     if request.method == "POST":
-        response = request.json 
+        response = request.json
         total = len(mp_qz)
         correct_num = 0
         data_for_template = []

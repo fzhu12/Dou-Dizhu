@@ -1,41 +1,20 @@
 {% extends "layout.html" %}
 {% block content %}
 
-    <h1 class="text-center">Congratulation for finishing the tutorial!!!</h1>
-    <h1 class="text-center">Now lets moving to the next step…</h1>
+    <head>
+        <link rel="stylesheet" href="{{url_for('static', filename='css/finish.css')}}">
+    </head>
+
+    <h1 class="text-center title">Congratulation for finishing the tutorial!!!</h1>
+    <h1 class="text-center title">Now lets moving to the next step…</h1>
 
     <div class="row d-flex align-items-center justify-content-center">
-        <img src="../static/img/finish.jpg" alt="finish">
+        <img src="../static/img/landlord.png" class="img-fluid img" alt="finish">
     </div>
 
     <div class="row d-flex align-items-center justify-content-center">
         <a href="{{ url_for('quiz') }}" class="btn btn-success">Start the quiz</a>
     </div>
-
-{#    <div class="show_progress">#}
-{#        <div class="progress_bar">#}
-{#            <div class="progress_tracker">#}
-{#                {% for step in range(1, 10) %}#}
-{#                    {% if step <= 10 %}#}
-{#                        <div class="step completed">#}
-{#                            <span class="icon">✔</span>#}
-{#                        </div>#}
-{#                    {% else %}#}
-{#                        <div class="step">#}
-{#                            <span class="icon"></span>#}
-{#                        </div>#}
-{#                    {% endif %}#}
-{#                {% endfor %}#}
-{#            </div>#}
-{#        </div>#}
-{#        <div class="progress_bar">#}
-{#            <div class="progress_tracker">#}
-{#                {% for step in range(1, 10) %}#}
-{#                    <div class="progress_text">Step {{ step }}</div>#}
-{#                {% endfor %}#}
-{#            </div>#}
-{#        </div>#}
-{#    </div>#}
 
     <div class="nav-arrows-container">
         <a href="{{ url_for('decrement_progress') }}" class="left-arrow">←</a>

@@ -7,14 +7,14 @@
 
 body {
     color: #592b1c;         /* Sets the text color */
-    background-color: #f0c389;  /* Sets the background color */
+    background-color: #ffefdd;  /* Sets the background color */
     font-family: 'Crete Round', serif;
     margin-bottom: 50px;
 }
 
 /* CSS style for navbar*/
 .navbar-custom {
-    background-color: #a33907;
+    background-color: #f3951d;
 }
 
 .navbar-dark .navbar-brand {
@@ -30,7 +30,7 @@ body {
 
 .left-arrow, .right-arrow {
     font-size: 32px;
-    color: #007BFF;
+    color: #28a745;
     text-decoration: none;
     padding: 10px 20px;
     border-radius: 50%;
@@ -40,8 +40,8 @@ body {
 
 .left-arrow:hover, .right-arrow:hover {
     color: #fff;
-    background-color: #6899cd;
-    border-color: #407dbe;
+    background-color: #3fb459;
+    border-color: #39af53;
 }
 
 .nav-arrows-container {

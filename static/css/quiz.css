@@ -12,3 +12,81 @@
     background-color: #ffffe0;
     border: 1px dashed #ccc;
 }
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+    overflow-y: auto;
+}
+
+.container {
+    padding: 20px;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.card {
+    margin-bottom: 20px;
+}
+
+.card-body {
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.quiz-img {
+    width: 50px;
+    /* Smaller images */
+    height: 50px;
+    /* Maintain aspect ratio */
+    margin-right: 10px;
+}
+
+.list-group-item {
+    margin-bottom: 5px;
+    /* Reduced space between options */
+    font-size: 14px;
+    /* Smaller font size */
+    padding: 10px 15px;
+    /* Appropriate padding for aesthetics */
+}
+
+.form-check-label {
+    margin-bottom: 0;
+    /* Aligns text properly with the checkbox */
+}
+
+.ui-state-default {
+    padding: 8px 10px;
+    margin-bottom: 5px;
+    /* Space between sortable items */
+    background-color: #f8f9fa;
+    /* Light background for sortable items */
+    border: 1px solid #ced4da;
+    /* Borders for sortable items */
+    cursor: move;
+    /* Cursor indicates movable item */
+}
+
+#quizOptions {
+    padding-left: 0;
+    /* Removes padding for cleaner UI in sortables */
+}
+
+.connectedSortable {
+    min-height: 50px;
+    /* Ensures sortable area is visible even if empty */
+}
+
+.form-check-input {
+    margin-top: 0.3em;
+    /* Aligns checkboxes nicely */
+}
+
+/* Add responsiveness to images to ensure they fit well in their containers */
+.quiz-img,
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+}

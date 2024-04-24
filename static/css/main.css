@@ -27,6 +27,7 @@ body {
 }
 
 /* CSS style for arrows on bottom of pages*/
+
 .left-arrow, .right-arrow {
     font-size: 32px;
     color: #007BFF;
@@ -57,9 +58,14 @@ body {
 }
 
 /* CSS style for welcome page*/
+.vertical-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
 .container.game-container {
-    margin-top: 20px;
+    margin-top: 10%;
     margin-bottom: 20px;
 }
 .game-maininfo {

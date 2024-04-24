@@ -1,12 +1,7 @@
 {% extends 'layout.html' %}
 {% block content %}
-<div class="container mt-3 game-container">
-    <div class="row">
-        <div class="col-12 text-center">
-            <img src="{{ url_for('static', filename='img/logo.png') }}" alt="Doudizhu Master Logo" class="img-fluid logo-image">
-        </div>
-    </div>
-    <div class="row game-maininfo">
+<div class="container game-container">
+    <div class="row game-maininfo vertical-center">
         <div class="col-md-6">
             <img src="{{ url_for('static', filename='img/welcome.jpg') }}" alt="Dou dizhu Background" class="img-fluid game-image">
         </div>

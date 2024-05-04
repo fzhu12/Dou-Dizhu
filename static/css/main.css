@@ -115,6 +115,10 @@ body {
     text-align: center;
     font-size: 16px;
 }
+.btn-submit {
+    background-color: #28a745;
+    color: white;
+}
 
 /*sidebar history css*/
 .history-items img {

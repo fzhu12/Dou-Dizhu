@@ -26,7 +26,7 @@ function updateProgressTracker() {
         progressTrackerIcons.appendChild(iconElement);
         const textElement = document.createElement('div');
         textElement.classList.add('progress_text');
-        textElement.textContent = `Step ${step}`;
+        textElement.textContent = `Quiz ${step}`;
         progressTrackerTexts.appendChild(textElement);
     }
 }

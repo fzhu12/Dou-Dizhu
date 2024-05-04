@@ -15,25 +15,25 @@ with open(combo_path, "r") as combo_data:
 # 1: single with pic opts, 2: single without pic, 3: rank, 4: multiple
 quiz_1 = {
     "type": 3,
-    "title": "Rank the following cards according to game's card hierarchy",
+    "title": "Rank the following cards according to the game's card hierarchy.",
     "options": ["9C", "2C", "Abomb"],
     "correct": ["2", "1", "0"],
 }
 quiz_2 = {
     "type": 1,
-    "title": "Which of the following is boomb ",
+    "title": "Which of the following is a bomb?",
     "options": ["9C", "2C", "Abomb"],
     "correct": ["2"],
 }
 quiz_6 = {
     "type": 3,
-    "title": "Rank the following are biggest Triplet with an attached pair",
+    "title": "Rank the following triplet with an attached pair.",
     "options": ["AA222", "AAA33", "AAA22"],
     "correct": ["0", "2", "1"],
 }
 quiz_3 = {
     "type": 2,
-    "title": "What’s the best option I deal in this turn?",
+    "title": "What’s the best option to deal in this turn?",
     "options": ["A", "2", "Joker", "Q"],
     "q_img": "qt_1",
     "correct": ["0"],
@@ -41,7 +41,7 @@ quiz_3 = {
 
 quiz_4 = {
     "type": 2,
-    "title": "What’s the best option I deal in this turn?",
+    "title": "What’s the best option to deal in this turn?",
     "options": ["10,10,10,2", "10,10,10,9", "Joker", "K,K,2,2"],
     "q_img": "qt_2",
     "correct": ["1"],
@@ -49,7 +49,7 @@ quiz_4 = {
 
 quiz_5 = {
     "type": 4,
-    "title": "Which of the following are boombs",
+    "title": "Which of the following are bombs?",
     "options": ["9C", "2C", "Abomb", "Abomb"],
     "correct": ["2", "3"],
 }

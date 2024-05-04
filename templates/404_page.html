@@ -1,0 +1,9 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+<div style="text-align: center; margin-top: 50px;">
+    <h2>Oops! The page you are looking for cannot be found.</h2>
+    <img src="{{ url_for('static', filename='img/notFound.png') }}" alt="404 not found" class="img-fluid">
+</div>
+{% endblock %}

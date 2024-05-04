@@ -41,7 +41,6 @@
     grid-column: 2;
     grid-row: 2;
 }
-
 .caption {
     position: absolute;
     bottom: 90%;
@@ -117,4 +116,17 @@
 
 .card-image3 {
     margin-left: 15px;
+}
+
+.enlarged-card-stack {
+    width: 30%;  
+    margin-top: -60px; 
+}
+
+.top-margin-adjustment {
+    margin-top: 20px;  
+}
+.centered-card-stack {
+    margin-left: auto;
+    margin-right: auto;
 }

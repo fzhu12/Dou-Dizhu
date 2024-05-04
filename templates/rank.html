@@ -1,5 +1,10 @@
 {% extends "layout.html" %}
 {% block content %}
+<head>
+    <script src="{{ url_for('static', filename='js/rules.js') }}"></script>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/rules.css')}}">
+
+</head>
     <h1>Card Rank</h1>
 
         <div class="show_progress">
@@ -32,15 +37,25 @@
     </div>
 
     <div class="row">
-        <div class="col-2"></div>
+        <div class="col-3"></div>
         <div class="col-6">
             <p>{{ rank }}</p>
         </div>
-        <div class="col-4">
-            <img class="img-fluid" src="../static/img/order.jpg" alt="rank">
+        
+        <div class="game-images">
+            <div class="player top-margin-adjustment">
+                <div class="card-stack enlarged-card-stack centered-card-stack top-margin-adjustment" id="player3-cards">
+                    {% set ranks = ['3S', '4S', '5S', '6S', '7S', '8S', '9S', '10S', 'JS', 'QS', 'KS', 'AS', '2S', 'jocker1', 'jocker2'] %}
+                    {% for rank in ranks %}
+                    <img src="{{ url_for('static', filename='img/cards/' ~ rank ~ '.png') }}" alt="{{ rank }} of Diamonds" class="img-fluid card-image">
+                    {% endfor %}
+                </div>
+               
+            </div>
         </div>
+        
     </div>
-
+    <p style="text-align: center; width: 100%;">Card ranking from low to high</p>   
     <div class="nav-arrows-container">
         <a href="{{ url_for('decrement_progress') }}" class="left-arrow">←</a>
         <a href="{{ url_for('increment_progress') }}" class="right-arrow">→</a>

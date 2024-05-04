@@ -6,7 +6,6 @@
         var data = {{ data| tojson }}
     </script>
     <script src="{{ url_for('static', filename='js/quiz.js') }}"></script>
-    <link rel="stylesheet" href="{{url_for('static', filename='css/quiz.css')}}">
 
 </head>
 
@@ -36,9 +35,13 @@
 
 
 <!-- flow control  -->
+<!-- <div class="nav-arrows-container">
+    <button id="prv" class="left-arrow">←</a>
+    <button id="nxt" class="right-arrow">→</a>
+</div> -->
 <div class="nav-arrows-container">
-    <button id="prv" class="left-arrow">←</button>
-    <button id="nxt" class="right-arrow">→</button>
+    <a href="#" id="prv" class="left-arrow">←</a>
+    <a href="#" id="nxt" class="right-arrow">→</a>
 </div>
 <!-- modal sections  -->
 <div class="modal fade" id="errorModal" tabindex="-1" role="dialog" aria-labelledby="errorModalLabel"

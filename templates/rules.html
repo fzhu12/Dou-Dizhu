@@ -52,7 +52,7 @@
                 <img src="{{ url_for('static', filename='img/peasant.png') }}" alt="Peasant Player" class="img-fluid game-image" id="player1-peasant">
                 <div class="card-stack" id="player1-cards">
                     {% for i in range(17) %}
-                    <img src="{{ url_for('static', filename='img/cards/blue_back.png') }}" alt="Blue Card" class="img-fluid card-image">
+                    <img src="{{ url_for('static', filename='img/cards/blue_back copy.png') }}" alt="Blue Card" class="img-fluid card-image">
                     {% endfor %}
                 </div>
                 <p class='cards_count'>17 cards</p>
@@ -60,7 +60,7 @@
             <div class="player cards1">
                 <div class="card-stack" id="player4-cards">
                     {% for i in range(3) %}
-                    <img src="{{ url_for('static', filename='img/cards/yellow_back.png') }}" alt="Yellow Card" class="img-fluid card-image3">
+                    <img src="{{ url_for('static', filename='img/cards/yellow_back copy.png') }}" alt="Yellow Card" class="img-fluid card-image3">
                     {% endfor %}
                 </div>
                 <p class='cards_count'>3 cards</p>
@@ -70,7 +70,7 @@
                 <img src="{{ url_for('static', filename='img/peasant.png') }}" alt="Peasant Player" class="img-fluid game-image">
                 <div class="card-stack" id="player2-cards">
                     {% for i in range(17) %}
-                    <img src="{{ url_for('static', filename='img/cards/purple_back.png') }}" alt="Purple Card" class="img-fluid card-image">
+                    <img src="{{ url_for('static', filename='img/cards/purple_back copy.png') }}" alt="Purple Card" class="img-fluid card-image">
                     {% endfor %}
                 </div>
                 <p class='cards_count'>17 cards</p>
@@ -79,7 +79,7 @@
                 <img src="{{ url_for('static', filename='img/peasant.png') }}" alt="Landlord Player" class="img-fluid game-image">
                 <div class="card-stack" id="player3-cards">
                     {% for i in range(17) %}
-                    <img src="{{ url_for('static', filename='img/cards/green_back.png') }}" alt="Green Card" class="img-fluid card-image">
+                    <img src="{{ url_for('static', filename='img/cards/green_back copy.png') }}" alt="Green Card" class="img-fluid card-image">
                     {% endfor %}
                 </div>
                 <p class='cards_count'>17 cards</p>
@@ -89,7 +89,13 @@
 
 
     {% elif rule_id == 2 %}
-        <p>Dou dizhu is played among three people with one pack of cards, including the two differentiated jokers. The game starts with players bidding for the "landlord" (地主) position. Players initially examine their own cards to strategize. Then, players announce their willingness to take on risk stakes of 1, 2, or 3, based on their confidence in their hand's strength, with the bidding process being either random online or based on predetermined rules in-person. The player who bids the highest becomes the landlord and incorporates the 3 leftover cards into their hand, competing against the two farmers. </p>
+        <p><strong>Bidding for the "landlord" (地主) role:</strong></p>
+            <ol>
+            <li>Start with a random player (or based on predetermined rules)</li>
+            <li>Players bid on their willingness to take the risk</li>
+            <li>The "landlord" is the player who bids the highest and takes the 3 leftover cards.</li>
+            <li>The "peasants" are the other 2 players.</li>
+            </ol>
 
 
         <button id="startTutorial2" class='btn btn-success'>Start Tutorial</button>
@@ -100,7 +106,7 @@
                 <img src="{{ url_for('static', filename='img/peasant.png') }}" alt="Peasant Player" class="img-fluid game-image">
                 <div class="card-stack" id="player1-cards">
                     {% for i in range(17) %}
-                    <img src="{{ url_for('static', filename='img/cards/blue_back.png') }}" alt="Blue Card" class="img-fluid card-image">
+                    <img src="{{ url_for('static', filename='img/cards/blue_back copy.png') }}" alt="Blue Card" class="img-fluid card-image">
                     {% endfor %}
                 </div>
 
@@ -109,7 +115,7 @@
             <div class="player cards1">
                 <div class="card-stack" id="player4-cards">
                     {% for i in range(3) %}
-                    <img src="{{ url_for('static', filename='img/cards/yellow_back.png') }}" alt="Yellow Card" class="img-fluid card-image3">
+                    <img src="{{ url_for('static', filename='img/cards/yellow_back copy.png') }}" alt="Yellow Card" class="img-fluid card-image3">
                     {% endfor %}
                 </div>
             </div>
@@ -117,7 +123,7 @@
                 <img src="{{ url_for('static', filename='img/peasant.png') }}" alt="Peasant Player" class="img-fluid game-image">
                 <div class="card-stack" id="player2-cards">
                     {% for i in range(17) %}
-                    <img src="{{ url_for('static', filename='img/cards/gray_back.png') }}" alt="Gray Card" class="img-fluid card-image">
+                    <img src="{{ url_for('static', filename='img/cards/gray_back copy.png') }}" alt="Gray Card" class="img-fluid card-image">
                     {% endfor %}
                 </div>
                 <p class="caption">No bid</p>
@@ -126,7 +132,7 @@
                 <img src="{{ url_for('static', filename='img/peasant.png') }}" alt="Landlord Player" class="img-fluid game-image">
                 <div class="card-stack" id="player3-cards">
                     {% for i in range(17) %}
-                    <img src="{{ url_for('static', filename='img/cards/green_back.png') }}" alt="Green Card" class="img-fluid card-image">
+                    <img src="{{ url_for('static', filename='img/cards/green_back copy.png') }}" alt="Green Card" class="img-fluid card-image">
                     {% endfor %}
                 </div>
                 <p class="caption">I bid higher!</p>
@@ -148,7 +154,7 @@
                 <img src="{{ url_for('static', filename='img/peasant.png') }}" alt="Peasant Player" class="img-fluid game-image" id="player1-peasant">
                 <div class="card-stack" id="player1-cards">
                     {% for i in range(17) %}
-                    <img src="{{ url_for('static', filename='img/cards/blue_back.png') }}" alt="Blue Card" class="img-fluid card-image">
+                    <img src="{{ url_for('static', filename='img/cards/blue_back copy.png') }}" alt="Blue Card" class="img-fluid card-image">
                     {% endfor %}
                 </div>
                 <p class='cards_count'>17 cards</p>
@@ -159,7 +165,7 @@
                 <img src="{{ url_for('static', filename='img/peasant.png') }}" alt="Peasant Player" class="img-fluid game-image">
                 <div class="card-stack" id="player2-cards">
                     {% for i in range(17) %}
-                    <img src="{{ url_for('static', filename='img/cards/purple_back.png') }}" alt="Purple Card" class="img-fluid card-image">
+                    <img src="{{ url_for('static', filename='img/cards/purple_back copy.png') }}" alt="Purple Card" class="img-fluid card-image">
                     {% endfor %}
                 </div>
                 <p class='cards_count'>17 cards</p>
@@ -169,7 +175,7 @@
                 <img src="{{ url_for('static', filename='img/landlord.png') }}" alt="Landlord Player" class="img-fluid game-image">
                 <div class="card-stack" id="player3-cards">
                     {% for i in range(17) %}
-                    <img src="{{ url_for('static', filename='img/cards/green_back.png') }}" alt="Green Card" class="img-fluid card-image">
+                    <img src="{{ url_for('static', filename='img/cards/green_back copy.png') }}" alt="Green Card" class="img-fluid card-image">
                     {% endfor %}
                 </div>
                 <p class='cards_count'>17 cards</p>

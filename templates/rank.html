@@ -41,21 +41,22 @@
         <div class="col-6">
             <p>{{ rank }}</p>
         </div>
+    </div>
         
-        <div class="game-images">
-            <div class="player top-margin-adjustment">
-                <div class="card-stack enlarged-card-stack centered-card-stack top-margin-adjustment" id="player3-cards">
-                    {% set ranks = ['3S', '4S', '5S', '6S', '7S', '8S', '9S', '10S', 'JS', 'QS', 'KS', 'AS', '2S', 'jocker1', 'jocker2'] %}
-                    {% for rank in ranks %}
-                    <img src="{{ url_for('static', filename='img/cards/' ~ rank ~ '.png') }}" alt="{{ rank }} of Diamonds" class="img-fluid card-image">
-                    {% endfor %}
-                </div>
-               
+    <div class="game-images">
+        <div class="player player3" id="landlordPlayer">
+            <div class="card-stack1" id="player3-cards">
+                {% set ranks = ['3S', '4S', '5S', '6S', '7S', '8S', '9S', '10S', 'JS', 'QS', 'KS', 'AS', '2S', 'jocker1', 'jocker2'] %}
+                {% for rank in ranks %}
+                <img src="{{ url_for('static', filename='img/cards/' ~ rank ~ '.png') }}" alt="{{ rank }} of Diamonds" class="img-fluid card-image">
+                {% endfor %}
             </div>
+           
         </div>
+    </div>
         
     </div>
-    <p style="text-align: center; width: 100%;">Card ranking from low to high</p>   
+    <p style="text-align: center; width: 100%;">(Card ranking from low to high)</p>   
     <div class="nav-arrows-container">
         <a href="{{ url_for('decrement_progress') }}" class="left-arrow">←</a>
         <a href="{{ url_for('increment_progress') }}" class="right-arrow">→</a>

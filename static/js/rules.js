@@ -111,7 +111,7 @@ $(document).ready(function() {
     function generateCards(count, color) {
         let cardsHtml = '';
         for (let i = 0; i < count; i++) {
-            cardsHtml += `<img src="/static/img/cards/${color}_back.png" alt="${color} Card" class="img-fluid card-image">`;
+            cardsHtml += `<img src="/static/img/cards/${color}_back copy.png" alt="${color} Card" class="img-fluid card-image">`;
         }
         return cardsHtml;
     }

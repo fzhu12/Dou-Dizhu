@@ -56,6 +56,12 @@ quiz_5 = {
 mp_qz = [quiz_1, quiz_2, quiz_3, quiz_4, quiz_5, quiz_6]
 
 
+@app.errorhandler(404) 
+def not_found(e): 
+  
+# defining function 
+  return render_template("404_page.html") 
+
 @app.route("/")
 def welcome():
     return render_template("welcome.html", progress=progress)
